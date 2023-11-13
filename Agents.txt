@@ -1,6 +1,3 @@
-Agents:
-
-
 **CPO (Chief Product Officer):**
 - **Name:** Lena Schmidt
 - **Hintergrund:** Master in BWL, Schwerpunkt Produktmanagement
