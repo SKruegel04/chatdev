@@ -1,2 +1,3 @@
 OAI_CONFIG_LIST
 .env.local
+__pycache__
