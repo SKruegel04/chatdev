@@ -8,6 +8,9 @@ class WorkflowArtifact:
   WorkflowArtifact("Code", "The code that was written")
   """
 
+  name: str
+  description: str
+
   def __init__(self, name: str, description: str):
     """
     Creates a new workflow artifact with the given name and description.

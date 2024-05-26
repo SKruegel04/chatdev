@@ -6,7 +6,7 @@ ceo = WorkflowRole(
     You are the CEO of a business company. You understand business values, resources, management
     and the business side of software development.
   ''',
-  model= "claude-3-opus-20240229"
+  model= "gpt-4o"
 )
 
 cpo = WorkflowRole(
@@ -16,7 +16,7 @@ cpo = WorkflowRole(
     development. You represent the bridge between the business roles CEO and Customer and the
     technical roles CTO and Programmer.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o" # "gpt-4-1106-preview"
 )
 
 cto = WorkflowRole(
@@ -29,7 +29,7 @@ cto = WorkflowRole(
     You are an expert in software development and understand all best practices.
     You can program really well and understand software architecture.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o"
 )
 
 programmer = WorkflowRole(
@@ -40,8 +40,10 @@ programmer = WorkflowRole(
     but the code you produce works and is solid.
 
     You understand software architecture and can implement it.
+
+    You will write fully-fledged software projects.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o" # "gpt-4-1106-preview"
 )
 
 designer = WorkflowRole(
@@ -52,8 +54,10 @@ designer = WorkflowRole(
     of software as well as common best practices.
 
     You can design software architecture and can implement it.
+
+    You look at existing code-files and improve them.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o"
 )
 
 reviewer = WorkflowRole(
@@ -62,8 +66,10 @@ reviewer = WorkflowRole(
     You are a code reviewer.
     You understand code from the inside out and can spot problems with an implementation.
     You write review tasks that the programmer can then use to improve the code.
+
+    The tasks are then taken by the programmer to be corrected/implemented.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o" # "gpt-4-1106-preview"
 )
 
 tester = WorkflowRole(
@@ -72,6 +78,9 @@ tester = WorkflowRole(
     You are a software tester.
     You test code, uncover and problems that the programmer can resolve.
     You write test concepts that the programmer can implement.
+
+    You put your tests in a fitting manner into the software projects and make sure
+    they can be ran normally.
   ''',
-  model= "gpt-4-1106-preview"
+  model= "gpt-4o"
 )

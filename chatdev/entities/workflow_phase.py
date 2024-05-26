@@ -30,6 +30,11 @@ class WorkflowPhase:
     ]
   )
   """
+
+  name: str
+  description: str
+  conversations: List[WorkflowConversation]
+
   def __init__(self, name: str, description: str, conversations: List[WorkflowConversation]):
     """
     Creates a new workflow phase with the given name, description, and conversations.
@@ -68,7 +73,7 @@ class WorkflowPhase:
 
     self.current_conversation_index += 1
   
-  def ended(self):
+  def ended(self) -> bool:
     """
     Returns whether this phase has ended.
     """

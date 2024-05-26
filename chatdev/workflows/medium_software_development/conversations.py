@@ -30,8 +30,6 @@ coding_code = WorkflowConversation(
   description= '''
     The initial implementation of the given use-cases realized as code.
     The code is not perfect yet, but it works.
-    The code is always written in Python.
-    Actual code is written and output in Markdown code blocks with the file name in bold above the block.
   ''',
   lead= cto,
   assistant= programmer,

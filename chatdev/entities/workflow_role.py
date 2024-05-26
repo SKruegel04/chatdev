@@ -10,6 +10,10 @@ class WorkflowRole:
   WorkflowRole("Developer", "Developer working on the code")
   """
 
+  name: str
+  description: str
+  model: str
+
   def __init__(self, name: str, description: str, model: str):
     """ 
     Creates a new workflow role with the given name and description.

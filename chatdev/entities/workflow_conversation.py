@@ -16,6 +16,14 @@ class WorkflowConversation:
     WorkflowArtifact("Code", "The code that was written"),
   )
   """
+
+  name: str
+  description: str
+  lead: WorkflowRole
+  assistant: WorkflowRole
+  input: WorkflowArtifact
+  output: WorkflowArtifact
+
   def __init__(self, name: str, description: str, lead: WorkflowRole, assistant: WorkflowRole, input: WorkflowArtifact, output: WorkflowArtifact):
     """
     Creates a new workflow conversation with the given name, description, roles, and artifacts.
