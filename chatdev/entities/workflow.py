@@ -1,3 +1,35 @@
+"""
+This module defines the `Workflow` class which contains the phases to be run in an AI workflow.
+
+Modules Imported:
+- `WorkflowPhase`, `WorkflowConversation`, `WorkflowRole`, `WorkflowArtifact` from `.workflow_phase`, `.workflow_conversation`, `.workflow_role`, `.workflow_artifact`:
+  Represent the respective components of a workflow.
+- `List`, `Set` from `typing`: Specifies list and set types.
+
+Classes:
+- `Workflow`: Represents a collection of phases in an AI workflow.
+
+`Workflow` Class:
+Attributes:
+- `name` (str): The name of the workflow.
+- `description` (str): The description of the workflow.
+- `phases` (List[WorkflowPhase]): The list of phases in the workflow.
+- `current_phase_index` (int): The index pointing to the current phase in the workflow.
+
+Methods:
+- `__init__(self, name: str, description: str, phases: List[WorkflowPhase])`: Initializes a Workflow with name, description, and phases.
+- `roles(self) -> Set[WorkflowRole]`: Returns a set of all roles involved in this workflow.
+- `artifacts(self) -> Set[WorkflowArtifact]`: Returns a set of all artifacts involved in this workflow.
+- `conversations(self) -> Set[WorkflowConversation]`: Returns a set of all conversations involved in this workflow.
+- `current_phase(self) -> WorkflowPhase`: Returns the current phase in this workflow.
+- `next_phase(self)`: Moves to the next phase in this workflow.
+- `ended(self) -> bool`: Returns whether this workflow has ended.
+- `current_conversation(self) -> WorkflowConversation`: Returns the current conversation in this workflow.
+- `next_conversation(self)`: Moves to the next conversation in this workflow.
+- `phase_ended(self) -> bool`: Returns whether the current phase has ended.
+- `__str__(self) -> str`: Returns a string representation of the workflow.
+"""
+
 from .workflow_phase import WorkflowPhase
 from .workflow_conversation import WorkflowConversation
 from .workflow_role import WorkflowRole
@@ -5,6 +37,10 @@ from .workflow_artifact import WorkflowArtifact
 from typing import List, Set
 
 class Workflow:
+  """
+  A Workflow contains the phases to be run in an AI workflow.
+  """
+
   name: str
   description: str
   phases: List[WorkflowPhase]

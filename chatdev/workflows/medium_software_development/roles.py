@@ -1,3 +1,21 @@
+"""
+This module defines the workflow roles for the medium software development workflow.
+
+Modules Imported:
+- `WorkflowRole` from `...entities`: Represents a role in the workflow.
+
+Roles:
+- `ceo`: Describes the CEO role, responsible for understanding business values, resources, and management in software development.
+- `cpo`: Describes the CPO role, bridging business and technical roles in software development.
+- `cto`: Describes the CTO role, bridging technical and business roles, and understanding software architecture and best practices.
+- `programmer`: Describes the Programmer role, responsible for writing solid code and implementing software architecture.
+- `designer`: Describes the Designer role, responsible for designing and improving software architecture and code.
+- `reviewer`: Describes the Reviewer role, responsible for spotting problems in code and writing review tasks for the programmer.
+- `tester`: Describes the Tester role, responsible for testing code, uncovering problems, and writing test concepts for the programmer to implement.
+
+Each role is defined as a `WorkflowRole` with appropriate names, descriptions, and models.
+"""
+
 from ...entities import WorkflowRole
 
 ceo = WorkflowRole(

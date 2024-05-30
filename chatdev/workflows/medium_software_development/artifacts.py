@@ -1,3 +1,23 @@
+"""
+This module defines the workflow artifacts for the medium software development workflow.
+
+Modules Imported:
+- `WorkflowArtifact` from `...entities.workflow_artifact`: Represents an artifact in the workflow.
+
+Artifacts:
+- `task`: The business task as defined by the customer to be realized as a software product or feature.
+- `modalities`: Contains information about development time, budget, human resource costs, and other constraints.
+- `language`: Use cases of the task defined in human language.
+- `code`: The code written by the programmer, yet to be designed, reviewed, and tested.
+- `designed_code`: Code enhanced by the designer considering architectural decisions, UX, best practices, etc.
+- `reviewed_code`: The reviewed code with a list of review items and applied corrections, yet to be tested.
+- `tested_code`: The tested code with proper tests, ready to be deployed.
+- `spec`: The technical specification of the implemented code, declaring technical aspects.
+- `manual`: A manual for the customer detailing how to use the changes and integrate with other departments or companies.
+
+Each artifact is defined as a `WorkflowArtifact` with appropriate names and descriptions.
+"""
+
 from ...entities.workflow_artifact import WorkflowArtifact
 
 task = WorkflowArtifact(

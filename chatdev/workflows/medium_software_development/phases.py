@@ -1,3 +1,19 @@
+"""
+This module defines the workflow phases for the medium software development workflow.
+
+Modules Imported:
+- `WorkflowPhase` from `...entities`: Represents a phase in the workflow.
+- Various conversations from `.conversations`: Represents the conversations involved in each phase.
+
+Phases:
+- `designing`: Phase where the task provided by the customer is analyzed, and business modalities and use-cases are created.
+- `coding`: The phase where the actual code implementation is created.
+- `testing`: The phase where the implementation is reviewed and tested properly to ensure it meets all quality standards.
+- `documenting`: The phase where the implementation is documented for technical and business people for future extensions, usage, and integrations.
+
+Each phase is defined as a `WorkflowPhase` with appropriate names, descriptions, and conversations.
+"""
+
 from ...entities import WorkflowPhase
 from .conversations import design_modalities, design_language, coding_code, coding_design, testing_review, testing_test, documenting_spec, documenting_manual
 

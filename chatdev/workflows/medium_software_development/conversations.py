@@ -1,3 +1,24 @@
+"""
+This module defines the workflow conversations for the medium software development workflow.
+
+Modules Imported:
+- `WorkflowConversation` from `...entities`: Represents a conversation in the workflow.
+- Various roles from `.roles`: Represents the roles of participants in the conversations.
+- Various artifacts from `.artifacts`: Represents the input and output artifacts of the conversations.
+
+Conversations:
+- `design_modalities`: The task given by the customer is analyzed and the respective modalities are created.
+- `design_language`: Specific use-cases are created from the task and modalities to help the technical team form working code.
+- `coding_code`: Initial implementation of the use-cases realized as code, not perfect but functional.
+- `coding_design`: The given code is analyzed for architectural problems and improved upon.
+- `testing_review`: The completed code is reviewed for common problems, errors, and best practices.
+- `testing_test`: The code is tested for business cases, with tests written based on the tester's concept.
+- `documenting_spec`: A technical specification is created covering all aspects of the code.
+- `documenting_manual`: A business documentation is created for the customer, explaining what was implemented on a business level.
+
+Each conversation is defined as a `WorkflowConversation` with appropriate names, descriptions, leads, assistants, inputs, and outputs.
+"""
+
 from ...entities import WorkflowConversation
 from .roles import ceo, cpo, cto, programmer, designer, reviewer, tester
 from .artifacts import task, modalities, language, code, designed_code, reviewed_code, tested_code, spec, manual

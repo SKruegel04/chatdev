@@ -1,3 +1,29 @@
+"""
+This module defines the `AnthropicAdapter` class which interacts with Anthropic AI models.
+
+Modules Imported:
+- `Message`, `Thread`, `Tool`, `ContentBlock`, `TextBlock`, `ToolResultBlock`, `ToolUseBlock` from `chatdev.entities`: Represents various components of workflows and tool interactions.
+- `Adapter` from `.adapter`: Represents the generic adapter interface.
+- `Anthropic` from `anthropic`: Initializes the Anthropic client.
+
+Classes:
+- `AnthropicAdapter`: Manages interactions with Anthropic AI models.
+
+`AnthropicAdapter` Class:
+Attributes:
+- `client` (Anthropic): The Anthropic client.
+- `model` (str): The model identifier for the Anthropic AI.
+
+Methods:
+- `__init__(self, client: Anthropic, model: str)`: Initializes the AnthropicAdapter with the specified client and model.
+- `generate_llm_response(self, thread: Thread) -> None`: Generates a response from the Anthropic model based on the provided thread.
+- `tool_to_dict(self, tool: Tool) -> dict`: Converts a Tool object to a dictionary representation.
+- `message_to_dict(self, message: Message) -> dict`: Converts a Message object to a dictionary representation.
+- `dict_to_message(self, message: dict) -> Message`: Converts a dictionary to a Message object.
+- `content_block_to_dict(self, block: ContentBlock) -> dict`: Converts a ContentBlock object to a dictionary representation.
+- `dict_to_content_block(self, block: dict) -> ContentBlock`: Converts a dictionary to a ContentBlock object.
+"""
+
 from chatdev.entities import Message, Thread, Tool, ContentBlock, TextBlock, ToolResultBlock, ToolUseBlock
 from .adapter import Adapter
 from anthropic import Anthropic

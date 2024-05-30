@@ -4,7 +4,7 @@ erDiagram
     WorkflowArtifact
     WorkflowConversation
     WorkflowPhase
-    WorkflowManager
+    Workflow
 
     WorkflowConversation ||--o{ WorkflowRole : "has lead"
     WorkflowConversation ||--o{ WorkflowRole : "has assistant"
@@ -12,7 +12,7 @@ erDiagram
     WorkflowConversation ||--o{ WorkflowArtifact : "has output"
 
     WorkflowPhase }o--o{ WorkflowConversation: "has"
-    WorkflowManager }o--o{ WorkflowPhase: "has"
+    Workflow }o--o{ WorkflowPhase: "has"
 ```
 
 ```mermaid
@@ -74,6 +74,7 @@ classDiagram
     WorkflowConversation --* WorkflowArtifact : "has output"
 
     WorkflowPhase --o WorkflowConversation : "has multiple"
+    Workflow --o WorkflowPhase : "has multiple"
 
     Thread --o Message : "has multiple"
     Thread --o Tool : "has multiple"

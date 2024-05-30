@@ -1,3 +1,32 @@
+"""
+This module defines the `Thread` class representing a sequence of messages exchanged in the workflow.
+
+Modules Imported:
+- `List`, `Optional` from `typing`: Specifies list and optional types.
+- `Message` from `.message`: Represents a message in the thread.
+- `Tool` from `.tool`: Represents a tool used in the thread (unused in class but imported).
+- `TextBlock` from `.content_blocks.text_block`: Represents a block of text content in a message.
+- `ToolUseBlock` from `.content_blocks.tool_use_block`: Represents a block of tool use content in a message.
+
+Classes:
+- `Thread`: Represents a sequence of messages in the workflow.
+
+`Thread` Class:
+Attributes:
+- `workspace_path` (str): Path to the workspace directory.
+- `messages` (List[Message]): List of messages associated with the thread.
+
+Methods:
+- `__init__(self, workspace_path: str, messages: List[Message])`: Initializes a Thread with workspace path and messages.
+- `append_message(self, message: Message)`: Appends a message to the thread.
+- `append_text_message(self, text: str)`: Appends a text message to the thread.
+- `last_message(self) -> Optional[Message]`: Returns the last message in the thread, if any.
+- `last_message_tool_use_blocks(self) -> List[ToolUseBlock]`: Returns tool use blocks from the last message, if any.
+- `last_message_text(self) -> Optional[str]`: Returns text content from the first text block of the last message, if any.
+- `__str__(self)`: Returns a string representation of the thread.
+- `dict(self) -> dict`: Returns a dictionary representation of the thread.
+"""
+
 from typing import List, Optional
 from .message import Message
 from .tool import Tool

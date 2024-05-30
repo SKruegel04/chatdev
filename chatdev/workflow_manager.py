@@ -1,3 +1,26 @@
+"""
+This module contains the WorkflowManager class responsible for executing AI workflows.
+
+Modules Imported:
+- `Thread`, `Workflow` from `chatdev.entities`: Represents workflows and their thread execution.
+- `AdapterFactory` from `chatdev.adapters`: Manages adapter initialization.
+- `generate` from `nanoid`: Generates unique IDs for workflows.
+- `Optional` from `typing`: Specifies optional types.
+
+Classes:
+- `WorkflowManager`: Manages and executes AI workflows.
+
+`WorkflowManager` Class:
+Attributes:
+- `adapter_factory` (AdapterFactory): The factory to create specific adapters for tools.
+
+Methods:
+- `__init__(self, adapter_factory: AdapterFactory)`: Initializes the WorkflowManager with the adapter factory.
+- `execute(self, workflow: Workflow, input: str, workspace_path: Optional[str])`: Executes the provided workflow with specified input and workspace path.
+
+The class further provides methods to manage different phases and conversations within the workflow and handle tool commands.
+"""
+
 from chatdev.entities import Thread, Workflow
 from chatdev.adapters import AdapterFactory
 from nanoid import generate
@@ -5,10 +28,11 @@ from typing import Optional
 
 class WorkflowManager:
   """
-  A WorkflowManager manages a workflow.
+  A WorkflowManager executes an AI workflow.
 
   It keeps track of the current phase and conversation and provides methods to move to the next one.
   """
+
   adapter_factory: AdapterFactory
 
   def __init__(self, adapter_factory: AdapterFactory):
@@ -21,9 +45,9 @@ class WorkflowManager:
     """
     Executes the workflow with the given input.
     """
-    id = generate(size= 10)
+    id = generate(size=10)
     thread_workspace_path = workspace_path if not workspace_path is None else f"workspaces/{id}"
-    thread = Thread(workspace_path= thread_workspace_path, messages= [])
+    thread = Thread(workspace_path=thread_workspace_path, messages=[])
 
     model = workflow.current_phase().current_conversation().lead.model
     adapter = self.adapter_factory.adapter(model)

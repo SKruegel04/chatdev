@@ -1,3 +1,22 @@
+"""
+This module defines the `TextBlock` class which represents a block of text content in a message.
+
+Modules Imported:
+- `ContentBlock` from `.content_block`: Represents a generic content block in a message.
+
+Classes:
+- `TextBlock`: Represents a block of text content in the workflow messages.
+
+`TextBlock` Class:
+Attributes:
+- `text` (str): The text content of the block.
+
+Methods:
+- `__init__(self, text: str)`: Initializes a TextBlock with the specified text.
+- `__str__(self)`: Returns a string representation of the text block.
+- `dict(self) -> dict`: Returns the dictionary representation of the text block.
+"""
+
 from .content_block import ContentBlock
 
 class TextBlock(ContentBlock):

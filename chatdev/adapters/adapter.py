@@ -1,3 +1,33 @@
+"""
+This module contains the Adapter class which interacts with various tools and AI models.
+
+Modules Imported:
+- `List` from `typing`: Specifies list type.
+- `Thread`, `Tool`, `Message`, `ToolUseBlock`, `ToolResultBlock` from `chatdev.entities`: Represents various components of workflows and tool interactions.
+- `makedirs`, `path`, `walk` from `os`: Manages file and directory operations.
+- `dumps` from `json`: Serializes Python objects to JSON format.
+- `compile`, `Pattern` from `re`: Compiles regular expressions for pattern matching.
+- `run` from `subprocess`: Executes shell commands.
+- `format_exception` from `traceback`: Formats exception traceback for error handling.
+- `request` from `requests`: Sends HTTP requests.
+
+Classes:
+- `Adapter`: Manages interactions with tools and AI responses.
+
+`Adapter` Class:
+Attributes:
+- `tools` (List[Tool]): List of tools available for interactions.
+
+Methods:
+- `generate_llm_response(self, thread: Thread) -> None`: Generates LLM response (implementation pending).
+- `generate_response(self, thread: Thread) -> None`: Generates response by dumping thread data and executing tools.
+- `dump_thread(self, thread: Thread) -> None`: Dumps the thread data in JSON format.
+- `execute_tools(self, thread: Thread) -> None`: Executes tool commands and handles results and errors.
+- `safe_execute_tool(self, thread: Thread, block: ToolUseBlock) -> ToolResultBlock`: Safely executes a tool and handles errors.
+- `execute_tool(self, thread: Thread, block: ToolUseBlock) -> ToolResultBlock`: Executes a specific tool command based on the block name.
+- `list_files_recursive(self, base_path: str, ignore_patterns: List[Pattern]) -> List[str]`: Lists files recursively, ignoring specified patterns.
+"""
+
 from typing import List
 from chatdev.entities import Thread, Tool, Message, ToolUseBlock, ToolResultBlock
 from os import makedirs, path, walk
@@ -51,7 +81,7 @@ class Adapter:
       "properties": {
         "ignore_patterns": {
           "type": "array",
-          "description": "an array of regular expressions in the format \"/<pattern>/<modifiers>\" that will be matched against the full path of every file. Use it to ignore files you don´t need to look at, e.g. dependency/library and output folders of code projects.",
+          "description": "an array of regular expressions in the format \"/<pattern>/<modifiers>\" that will be matched against the full path of every file. Use it to ignore files you don\u00b4t need to look at, e.g. dependency/library and output folders of code projects.",
           "items": {
             "type": "string"
           }

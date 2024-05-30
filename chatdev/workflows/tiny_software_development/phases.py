@@ -1,3 +1,16 @@
+"""
+This module defines the workflow phases for the tiny software development workflow.
+
+Modules Imported:
+- `WorkflowPhase` from `...entities`: Represents a phase in the workflow.
+- Various conversations from `.conversations`: Represents the conversations involved in each phase.
+
+Phases:
+- `coding`: The phase where the actual code implementation is created.
+
+Each phase is defined as a `WorkflowPhase` with appropriate names, descriptions, and conversations.
+"""
+
 from ...entities import WorkflowPhase
 from .conversations import coding_code, coding_test
 

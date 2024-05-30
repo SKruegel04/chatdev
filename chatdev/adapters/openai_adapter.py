@@ -1,3 +1,29 @@
+"""
+This module defines the `OpenAIAdapter` class which interacts with OpenAI models.
+
+Modules Imported:
+- `Message`, `Thread`, `TextBlock`, `ToolUseBlock` from `chatdev.entities`: Represents various components of workflows and tool interactions.
+- `Adapter` from `.adapter`: Represents the generic adapter interface.
+- `OpenAI` from `openai`: Initializes the OpenAI client.
+- `List` from `typing`: Specifies list type.
+- `chain` from `itertools`: Chains multiple iterables together.
+- `dumps`, `loads` from `json`: Serializes and deserializes JSON objects.
+
+Classes:
+- `OpenAIAdapter`: Manages interactions with OpenAI models.
+
+`OpenAIAdapter` Class:
+Attributes:
+- `client` (OpenAI): The OpenAI client.
+- `model` (str): The model identifier for the OpenAI AI.
+
+Methods:
+- `__init__(self, client: OpenAI, model: str)`: Initializes the OpenAIAdapter with the specified client and model.
+- `generate_llm_response(self, thread: Thread) -> None`: Generates a response from the OpenAI model based on the provided thread.
+- `split_messages(self, message: Message) -> List[Message]`: Splits a message into individual message components for processing.
+- `del_none(self, d)`: Deletes keys with the value `None` in a dictionary, recursively.
+"""
+
 from chatdev.entities import Message, Thread, TextBlock, ToolUseBlock
 from .adapter import Adapter
 from openai import OpenAI
